@@ -25,8 +25,17 @@
           <label for="checkbox3">I agree to the myFixer.com &nbsp;<a class="form__link" href="#" target="_blank">Terms of Service</a></label><br/>
           <input class="custom-checkbox" type="checkbox" id="checkbox4" name="checkbox4"/>
           <label for="checkbox4">I agree to the myFixer.com &nbsp;<a class="form__link" href="#" target="_blank">Privacy Policy</a></label>
-        </form><br/>
-        <br/>
+        </form>
+        <div class="g-recaptcha">
+          <vue-recaptcha siteKey="6Lf4FrwaAAAAAMNWzcBtP_hWTb_do-ONG57iNojR" 
+            :show="1" 
+            size="normal" 
+            theme="light"
+            :tabindex="0"
+
+            ref="vueRecaptcha">
+          </vue-recaptcha>
+        </div>
         <button class="form__btn">Done!</button>
       </div>
     </div>
@@ -35,14 +44,18 @@
 
 <script>
 import apiService from '../helpers/api';
+import vueRecaptcha from 'vue3-recaptcha2';
 
 export default {
   name: 'SignUp3',
-  // components: {
-  //   CustomButton,
-  // },
+  components: {
+    vueRecaptcha,
+  },
   data() {
-    return { SignUp3: [] }
+    return { 
+      SignUp3: [],
+      show: 1,  
+    }
   },
 
   beforeCreate() {
@@ -55,6 +68,15 @@ export default {
         console.log(err);
       })
   }
+  // recaptchaVerified(response) {
+  //   console.log(response);
+  // },
+  // recaptchaExpired() {
+  //   this.$refs.vueRecaptcha.reset();
+  // },
+  // recaptchaFailed() {
+  //   console.log(response);
+  // }
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <vue-recaptcha siteKey="6Lf4FrwaAAAAAMNWzcBtP_hWTb_do-ONG57iNojR" 
-        :show="show" 
+        :show="1" 
         size="normal" 
         theme="light"
         :tabindex="0"
@@ -20,7 +20,9 @@ export default {
 	vueRecaptcha
   },
   data() {
-	return { show: false }
+    return { 
+      show: 1 
+    }
   },
   methods: {
     recaptchaVerified(response) {

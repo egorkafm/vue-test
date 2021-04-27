@@ -56,6 +56,9 @@ export default {
   text-align: center;
 }
 
+.g-recaptcha {
+  margin: 20px auto;
+}
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

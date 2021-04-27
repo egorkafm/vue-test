@@ -21,17 +21,13 @@
           <input class="custom-checkbox" type="checkbox" id="checkbox2" name="checkbox2"/>
           <label for="checkbox2">I agree to the myFixer.com &nbsp;<a class="form__link" href="#" target="_blank">Privacy Policy</a></label>
         </form>
-        <br/>
-        <br/>
         <div class="g-recaptcha">
           <vue-recaptcha siteKey="6Lf4FrwaAAAAAMNWzcBtP_hWTb_do-ONG57iNojR" 
-            :show="show" 
+            :show="1" 
             size="normal" 
             theme="light"
             :tabindex="0"
-            @verify="recaptchaVerified"
-            @expire="recaptchaExpired"
-            @fail="recaptchaFailed"
+
             ref="vueRecaptcha">
           </vue-recaptcha>
         </div>
@@ -53,7 +49,7 @@ export default {
   data() {
     return { 
       SignUp2: [],
-      show: true, 
+      show: 1, 
     }
   },
 
