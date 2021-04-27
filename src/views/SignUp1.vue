@@ -44,7 +44,6 @@ export default {
         fname: '',
         lname: '',
         active: true,
-
       }
     }
   },

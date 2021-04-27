@@ -22,7 +22,19 @@
           <label for="checkbox2">I agree to the myFixer.com &nbsp;<a class="form__link" href="#" target="_blank">Privacy Policy</a></label>
         </form>
         <br/>
-        <div class="g-recaptcha" data-sitekey="YOUR_KEY" data-callback="correctCaptcha"></div><br/>
+        <br/>
+        <div class="g-recaptcha">
+          <vue-recaptcha siteKey="6Lf4FrwaAAAAAMNWzcBtP_hWTb_do-ONG57iNojR" 
+            :show="show" 
+            size="normal" 
+            theme="light"
+            :tabindex="0"
+            @verify="recaptchaVerified"
+            @expire="recaptchaExpired"
+            @fail="recaptchaFailed"
+            ref="vueRecaptcha">
+          </vue-recaptcha>
+        </div>
         <button class="form__btn">Done!</button>
       </div>
     </div>
@@ -31,14 +43,18 @@
 
 <script>
 import apiService from '../helpers/api';
+import vueRecaptcha from 'vue3-recaptcha2';
 
 export default {
   name: 'SignUp2',
-  // components: {
-  //   CustomButton,
-  // },
+  components: {
+    vueRecaptcha,
+  },
   data() {
-    return { SignUp2: [] }
+    return { 
+      SignUp2: [],
+      show: true, 
+    }
   },
 
   beforeCreate() {
@@ -50,7 +66,16 @@ export default {
       .catch((err) => {
         console.log(err);
       })
-  }
+  },
+  // recaptchaVerified(response) {
+  //   console.log(response);
+  // },
+  // recaptchaExpired() {
+  //   this.$refs.vueRecaptcha.reset();
+  // },
+  // recaptchaFailed() {
+  //   console.log(response);
+  // }
 }
 </script>
 

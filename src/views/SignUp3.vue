@@ -26,7 +26,7 @@
           <input class="custom-checkbox" type="checkbox" id="checkbox4" name="checkbox4"/>
           <label for="checkbox4">I agree to the myFixer.com &nbsp;<a class="form__link" href="#" target="_blank">Privacy Policy</a></label>
         </form><br/>
-        <div class="g-recaptcha" data-sitekey="YOUR_KEY" data-callback="correctCaptcha"></div><br/>
+        <br/>
         <button class="form__btn">Done!</button>
       </div>
     </div>
