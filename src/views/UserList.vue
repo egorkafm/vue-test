@@ -1,6 +1,5 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+  <div class="userList">
     <h1>List User</h1>
     <p v-for="user in users" :key="user.id">
       <b>Fist Name</b>
@@ -12,7 +11,7 @@
 </template>
 
 <script>
-import apiService from '../helpers/api'
+import apiService from '../helpers/api';
 // @ is an alias to /src
 
 export default {
@@ -33,4 +32,12 @@ export default {
   }
 }
 </script>
-
+<style lang="scss" scoped>
+  .userList {
+    text-align: center;
+    p {
+      margin: 10px auto;
+    }
+  }
+  
+</style>

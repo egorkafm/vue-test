@@ -52,9 +52,10 @@ export default {
       // await axios.get('http://localhost:3000/user/1').then((res) => console.log(res, 'res')).catch((err) => console.log(err, 'err'));
       // console.log(this.dataForSubmit);
       await apiService.post('/user', this.dataForSubmit)
-        .then(res => {
-          console.log('okey');
-          console.log(res.data);
+        .then(() => {
+          // console.log('okey');
+          // console.log(res.data);
+          this.$router.push('users');
         })
         .catch(err => {
           alert(err.response.message);
@@ -74,7 +75,7 @@ export default {
         this.SignUp1 = res.data.SignUp1
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response.data);
       })
   }
 }
